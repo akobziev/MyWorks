@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hello_Class_stud", "Hello_C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Module 2.4", "Module 2.4", "{1CE0150E-AB78-47F5-826B-73C559AAA064}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Module2.3", "Module2.3", "{E18C22A1-792A-4F3D-B653-517CBA2CD4DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpOverload", "Module2.3\OpOverload\OpOverload.csproj", "{4186D3ED-C5F9-4455-9E18-2FFAEB0D3283}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +21,17 @@ Global
 		{D84BD4CD-5931-4DCC-898F-973C70FF00B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D84BD4CD-5931-4DCC-898F-973C70FF00B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D84BD4CD-5931-4DCC-898F-973C70FF00B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4186D3ED-C5F9-4455-9E18-2FFAEB0D3283}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4186D3ED-C5F9-4455-9E18-2FFAEB0D3283}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4186D3ED-C5F9-4455-9E18-2FFAEB0D3283}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4186D3ED-C5F9-4455-9E18-2FFAEB0D3283}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D84BD4CD-5931-4DCC-898F-973C70FF00B6} = {1CE0150E-AB78-47F5-826B-73C559AAA064}
+		{4186D3ED-C5F9-4455-9E18-2FFAEB0D3283} = {E18C22A1-792A-4F3D-B653-517CBA2CD4DF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6942731B-F968-4CEE-8304-F834D9C403B8}
