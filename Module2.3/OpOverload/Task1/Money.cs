@@ -46,6 +46,7 @@ namespace OpOverload
 
         public static bool operator true(Money money)
         {
+            //c учетом Unknown - если не 0 то тру
             return money.CurrencyType == CurrencyTypes.EU || money.CurrencyType == CurrencyTypes.UAH || money.CurrencyType == CurrencyTypes.USD;
         }
 
