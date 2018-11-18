@@ -8,7 +8,7 @@ namespace Hello_Class_stud
     class Morse_matrix : String_matrix, IMorse_crypt
     {
         public const int Size_2 = Alphabet.Size;
-        private int offset_key = 0;
+        private int offset_key;// = 0; ноль тут необязателен, инт по дефолту ноль, и в конструкторе Вы ему значение присваиваете
 
 
         //Implement Morse_matrix constructor with the int parameter for offset
@@ -92,8 +92,12 @@ namespace Hello_Class_stud
         private void fd(string[,] Dict_arr)
         {
             for (int ii = 0; ii < Size_2; ii++)
+            {
                 for (int jj = 0; jj < Size_2; jj++)
+                {
                     this[ii, jj] = Dict_arr[ii, jj];
+                }
+            }
         }
 
 
@@ -101,9 +105,15 @@ namespace Hello_Class_stud
         {
             int off = Size_2 - offset_key;
             for (int jj = 0; jj < off; jj++)
+            {
                 this[1, jj] = this[1, jj + offset_key];
+
+            }
             for (int jj = off; jj < Size_2; jj++)
+            {
                 this[1, jj] = this[1, jj - off];
+
+            }
         }
 
 
