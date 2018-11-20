@@ -2,6 +2,7 @@
 
 namespace Hello_Class_stud
 {
+    //well done
     class Program
     {
         static void Main(string[] args)
@@ -77,12 +78,11 @@ namespace Hello_Class_stud
 
         static void Str_matr_decrypt()
         {
-            string word;
             Morse_matrix code_tbl = new Morse_matrix();
             code_tbl.Write_matrix();
             Console.WriteLine("From beep to sos");
             string[] sos = { "...  ", "---  ", "...  " };
-            word = code_tbl.Decrypt(sos);
+            string word = code_tbl.Decrypt(sos);
             Console.WriteLine("sos decrypt   :" + word);
         }
 
@@ -120,7 +120,9 @@ namespace Hello_Class_stud
             code_tbl2.Write_matrix();
 
             if (code_tbl1.Equals(code_tbl2))
-                Console.WriteLine("True");           
+            {
+                Console.WriteLine("True");
+            }
             else Console.WriteLine("False"); 
 
         }
