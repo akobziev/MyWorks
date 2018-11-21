@@ -8,14 +8,29 @@ namespace WorkWithDelegates.ClimateControl
 {
     public class AC
     {
-        public static void SwitchOn()
+        public static bool State { get; set; }
+        private static void SwitchOn()
         {
             Console.WriteLine("Air conditioner switched on");
         }
 
-        public static void SwitchOff()
+        private static void SwitchOff()
         {
             Console.WriteLine("Air conditioner switched off");
+        }
+
+        public static void OnTemperatureChanged(object sender, TempChangeEventArgs ev)
+        {
+            if (!State && ev.Temperature > 25)
+            {
+                State = true;
+                SwitchOn();
+            }
+            else if (State && ev.Temperature < 24)
+            {
+                State = false;
+                SwitchOff();
+            }
         }
     }
 }

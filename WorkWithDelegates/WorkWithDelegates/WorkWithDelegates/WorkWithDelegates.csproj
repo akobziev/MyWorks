@@ -47,6 +47,7 @@
     <Compile Include="ClimateControl\Apartment.cs" />
     <Compile Include="Calculator.cs" />
     <Compile Include="ClimateControl\Heater.cs" />
+    <Compile Include="ClimateControl\TempChangeEventArgs.cs" />
     <Compile Include="FuelControl\Car.cs" />
     <Compile Include="FuelControl\FuelController.cs" />
     <Compile Include="Program.cs" />
