@@ -15,6 +15,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WorkWithDelegates", "WorkWi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkWithDelegates", "WorkWithDelegates\WorkWithDelegates\WorkWithDelegates\WorkWithDelegates.csproj", "{930F95CC-646E-4FC0-AA93-475C18C74337}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WorkWithLinq", "WorkWithLinq", "{267BF8DB-A97E-40CC-AF68-18D21DD26459}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkWithLinq", "WorkWithLinq\WorkWithLinq.csproj", "{C3A44397-AB9D-4CA9-8140-C71751DDCD82}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,10 @@ Global
 		{930F95CC-646E-4FC0-AA93-475C18C74337}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{930F95CC-646E-4FC0-AA93-475C18C74337}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{930F95CC-646E-4FC0-AA93-475C18C74337}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3A44397-AB9D-4CA9-8140-C71751DDCD82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3A44397-AB9D-4CA9-8140-C71751DDCD82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3A44397-AB9D-4CA9-8140-C71751DDCD82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3A44397-AB9D-4CA9-8140-C71751DDCD82}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,6 +49,7 @@ Global
 		{D84BD4CD-5931-4DCC-898F-973C70FF00B6} = {1CE0150E-AB78-47F5-826B-73C559AAA064}
 		{4186D3ED-C5F9-4455-9E18-2FFAEB0D3283} = {E18C22A1-792A-4F3D-B653-517CBA2CD4DF}
 		{930F95CC-646E-4FC0-AA93-475C18C74337} = {4FE6D999-D3E5-4ED5-A5F9-1C0D9646185E}
+		{C3A44397-AB9D-4CA9-8140-C71751DDCD82} = {267BF8DB-A97E-40CC-AF68-18D21DD26459}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6942731B-F968-4CEE-8304-F834D9C403B8}
