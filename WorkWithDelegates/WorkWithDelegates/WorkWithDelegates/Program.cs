@@ -3,6 +3,7 @@ using WorkWithDelegates.FuelControl;
 
 namespace WorkWithDelegates
 {
+    //welldone
     public class Program
     {
         public static void Main()
