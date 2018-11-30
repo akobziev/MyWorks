@@ -80,7 +80,7 @@ namespace Module5._1
 
         private static DirectoryInfo CreateNewDirectory(string name)
         {
-            var directory = new DirectoryInfo(Path.Combine(AppDomain.CurrentDomain.BaseDirectory) + name);
+            var directory = new DirectoryInfo(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, name));
             if (directory.Exists)
             {
                 throw new Exception("Dir exist allready.");
