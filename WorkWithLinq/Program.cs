@@ -35,6 +35,11 @@ namespace WorkWithLinq
         {
             var result = (Dataset.People.Where(p => p.Languages.Select(l => l.Name).Contains("English"))
                 .Where(p => p.HomeAddress.City.Country.Language.Id != 1).Count() * 100) / Dataset.People.Count();
+            /*
+             *             double share = people.Where(p => p.Languages.Select(l => l.Id).Contains(Dataset.Langs.Single(l => l.Key == "en").Value.Id)).Where(p => p.HomeAddress.City.Country.Language.Id != Dataset.Langs.Single(l => l.Key == "en").Value.Id).Count() /
+                people.Where(p => p.Languages.Select(l => l.Id).Contains(Dataset.Langs.Single(l => l.Key == "en").Value.Id)).Where(p => p.HomeAddress.City.Country.Language.Id == Dataset.Langs.Single(l => l.Key == "en").Value.Id).Count();
+
+             */
         }
 
         private static void FindePersonLivesInSmolestCity()
@@ -50,7 +55,7 @@ namespace WorkWithLinq
 
         private static void FindeSinglePhD()
         {
-            var result = Dataset.People.Where(p => p.Occupation == "PhD Student").Count() == 1 ? true : throw new Exception("Error!");
+            var result = Dataset.People.Where(p => p.Occupation == "PhD Student").Count() == 1 ? true : throw new Exception("Error!"); //Use people.Single()
         }
 
         private static void FindePoligloteWithLowestRate()
@@ -104,7 +109,7 @@ namespace WorkWithLinq
 
         private static void SortAndWritePersoneInfo()
         {
-            Dataset.People.OrderBy(p => p.Name).OrderBy(p => p.SurName).ToList().ForEach(
+            Dataset.People.OrderBy(p => p.Name).OrderBy(p => p.SurName).ToList().ForEach(  //OrderBy().ThenBy()
                 p =>
                 {
                     Console.WriteLine($"{p.Name} {p.SurName}, age {p.Age} lives in {p.HomeAddress.City}, {p.HomeAddress.City.Country}" +
