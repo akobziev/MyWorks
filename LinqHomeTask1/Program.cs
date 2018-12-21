@@ -11,24 +11,30 @@ namespace LinqHomeTask1
     {
         public static void Main(string[] args)
         {
-            //WorkWithPaging();
-            List<string> vs = new List<string> {"afdsf", "fdasff", "fffffdasf", "fffffdasf" };
-            var res = vs.MySelectMany(s => s.ToUpper()).Where(c => c != 'A').ToList();
+            int[] arrayInts1 = { 1, 2, 3, 4, 5, 6, 7, 8, };
+            int[] arrayInts2 = { 3, 4, 5, 6, 7, 8, 9, 10, };
 
-            var res1 = vs.GroupBy(s => s.Length);
-            foreach (var item in res1)
-            {
-                Console.WriteLine(item.Key);
-                foreach (var c in item)
-                {
-                    Console.WriteLine(c);
-                }
-            }
-            var res2 = vs.Aggregate((acc, s) => acc + s);
-            foreach (var item in res2)
-            {
-                Console.WriteLine(item);
-            }
+            var str1 = "abcde";
+            var str2 = "cdeim";
+            var vovels = "a, e, i, o, u, y";
+
+            // 1
+            var res1 = arrayInts1.Intersect(arrayInts2).Min();
+
+            // 2
+            var res2 = arrayInts1.Intersect(arrayInts2).Where(el => el % 2 == 0).OrderBy(el => el).ElementAt(2);
+
+            // 3
+            var res3 = arrayInts1.Except(arrayInts2).Max();
+
+            // 4
+            var res4 = arrayInts1.Intersect(arrayInts2).All(el => el > 0);
+
+            // 5
+            var res5 = str1.Intersect(str2).Any();
+
+            // 6
+            var res6 = str1.Intersect(str2).Any(c => vovels.Contains(c));
         }
 
         #region Paging
