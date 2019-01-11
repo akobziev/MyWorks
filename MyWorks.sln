@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqHomeTask1", "LinqHomeTa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyObjectSerializer", "MyObjectSerializer\MyObjectSerializer.csproj", "{6D30037C-BB6C-40A8-8B8B-11BC2E2D0EB6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultyThreading", "MultyThreading\MultyThreading.csproj", "{D113FDE3-8939-4D41-80B8-EDC97EDD2B8F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{6D30037C-BB6C-40A8-8B8B-11BC2E2D0EB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D30037C-BB6C-40A8-8B8B-11BC2E2D0EB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D30037C-BB6C-40A8-8B8B-11BC2E2D0EB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D113FDE3-8939-4D41-80B8-EDC97EDD2B8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D113FDE3-8939-4D41-80B8-EDC97EDD2B8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D113FDE3-8939-4D41-80B8-EDC97EDD2B8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D113FDE3-8939-4D41-80B8-EDC97EDD2B8F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
