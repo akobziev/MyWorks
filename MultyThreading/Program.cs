@@ -4,6 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Linq;
 using System.IO;
+using System.Net;
 
 namespace MultyThreading
 {
@@ -22,11 +23,91 @@ namespace MultyThreading
             //Example7();
             //Example8();
             //Example9();
+            //Example10();
+            //Example11();
+            //ParallelExample1();
+            //ParallelLINQExample1();
+            //ParallelInvokeExample1();
+            //ParallelForExample();
+            ParallelForeachExample();
+        }
+
+        private static void ParallelForeachExample()
+        {
+            List<int> source = new List<int>() { 1, 2, 3, 4, 5, 6, 5, 5 };
+            int sum = 0;
+
+            Parallel.ForEach(source, el => sum += el);
+            Console.WriteLine(sum);
+            Parallel.ForEach("Hello, World!", Console.WriteLine);
+        }
+
+        private static void ParallelForExample()
+        {
+            Parallel.For(0, 100, i => Console.WriteLine(i));
+        }
+
+        private static void ParallelInvokeExample1()
+        {
+            var data = new List<string>();
+            Parallel.Invoke(
+                () => data.Add(new WebClient().DownloadString("https://google.com")),
+                () => data.Add(new WebClient().DownloadString("https://google.com"))
+            );
+            foreach (var item in data)
+            {
+                Console.WriteLine(item);
+            }
+        }
+
+        private static void ParallelLINQExample1()
+        {
+            IEnumerable<int> numbers = Enumerable.Range(3, 10000000);
+            var parallelQuery2 = numbers.AsParallel().Where(n => Enumerable.Range(2, (int)Math.Sqrt(n)).All(i => n % i > 0));
+            int[] primes = parallelQuery2.ToArray();
+            Console.WriteLine(primes.Length);
+        }
+
+        private static void ParallelExample1()
+        {
+            List<int> source = new List<int>() { 1, 2, 3, 5, 4 };
+            var res = Select(source, i => i.ToString());
+            foreach (var item in res)
+            {
+                Console.WriteLine(item);
+            }
+        }
+
+        private async static Task PrintInlinesAcync(string fileName)
+        {
+            var array = await File.ReadAllLinesAsync(fileName);
+            foreach (var item in array)
+            {
+                Thread.Sleep(300);
+                Console.WriteLine(item);
+            }
+        }
+
+        private static void Example11()
+        {
+            int sum = SumRecursive(new int[] { 1, 2, 3 });
+            Console.WriteLine(sum);
+        }
+
+        private static int SumRecursive(IEnumerable<int> source)
+        {
+            if (!source.Any())
+            {
+                return 0;
+            }
+            return source.First() + SumRecursive(source.Skip(1));
+        }
+
+        private static void Example10()
+        {
             DisplayItWorks();
             var res = GetMostImportantAnswer();
             Console.WriteLine(res.Result);
-
-
         }
 
         private static void Example9()
@@ -214,6 +295,25 @@ namespace MultyThreading
                     res.Add(arr[i]);
                 }
             }
+            return res;
+        }
+
+        public static IList<TResult> Select<TSource, TResult>(IList<TSource> source, Func<TSource, TResult> func)
+        {
+            TResult[] res = new TResult[source.Count];
+            Task t = Task.Run(() =>
+            {
+                for (int i = 0; i < source.Count / 2; i++)
+                {
+                    res[i] = func(source[i]);
+                }
+            });
+            
+            for (int i = source.Count / 2; i < source.Count; i++)
+            {
+                res[i] = func(source[i]);
+            }
+            t.Wait();
             return res;
         }
     }
